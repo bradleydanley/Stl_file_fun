@@ -1,0 +1,17 @@
+In this documentation we will be showcasing how to export an STL geometry.
+In order to do this, you will need to have the following packages: numpy, numpy-stl, math, meep, mplotlib, trimesh
+
+To get an stl file from a meep simulation, first import the file: import meep_to_stl.py
+
+You can call the function make_meep_stl_file(simulation, stl_file_output_path)
+An example of the stl_file_output_path might be
+dest_path = 'stl_files/simiulation_geometry_1.stl'
+make_meep_stl_file(simulation, dest_path)
+
+If you want to create a base for the objects to stand on, you can add a True at the end: make_meep_stl_file(simulation, file_output_path, True). If left without, it defalts to False. 
+
+If you want to see the stl file, you can call: show_stl_plot(stl_file_output_path)
+This can be any stl file.
+
+
+
