@@ -1,17 +1,36 @@
-In this documentation we will be showcasing how to export an STL geometry.
-In order to do this, you will need to have the following packages: numpy, numpy-stl, math, meep, mplotlib, trimesh
+SOP for using meep_to_stl.py
 
-To get an stl file from a meep simulation, first import the file: import meep_to_stl.py
+Purpose: This script is can be used to convert meep geometries into stl files.
 
-You can call the function make_meep_stl_file(simulation, stl_file_output_path)
-An example of the stl_file_output_path might be
-dest_path = 'stl_files/simiulation_geometry_1.stl'
-make_meep_stl_file(simulation, dest_path)
+Prerequisites: 
+      1. Python is installed
+      2. Pyton Packages: numpy, stl, meep, matplotlib, trimesh
+        -pip install numpy numpy-stl meep matplotlib trimesh
+        -note that this would might be useful within a meep conda environment
 
-If you want to create a base for the objects to stand on, you can add a True at the end: make_meep_stl_file(simulation, file_output_path, True). If left without, it defalts to False. 
 
-If you want to see the stl file, you can call: show_stl_plot(stl_file_output_path)
-This can be any stl file.
+Script Overview:
+  1.The key function within this script is make_meep_stl_file(simulation, stl_file_output_path)
+      -An example of an output path might be
+          dest_path = 'stl_files/simulation_geometry_1.stl'
+          make_meep_stl_file(sim, dest_path)
+      -if you want to create a base for the objects to stand on for the stl file, you can add a True flag at the end: make_meep_stl_file(sim, dest_path, True). If you leave it out, it defaults to False.
 
+  2.Another key function is the show_stl_plot(stl_file_output_path)
+        -This can be any stl file
+
+Running the Script:
+  You can run this script on it's own to see how some of the functions work. 
+  - Change the dest_path to 'path/to/your/output.stl'. 
+  - Run with python meep_to_stl.py
+  - This will generate an STL file and show you how it looks.
+
+Calling the Script:
+  To call in specific function you can use this command
+    - from meep_to_stl.py import make_meep_stl_file, show_stl_plot
+
+Notes:
+  1. Your geometry can include mp.air, and it will subtract this geometry from any mp.Medium. 
+  2. The only shapes that currently work are blocks, cylinders and spheres. Cones, Prisms, Torus are coming next. 
 
 
