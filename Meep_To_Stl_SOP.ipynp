@@ -4,9 +4,9 @@ Purpose: This script is can be used to convert meep geometries into stl files.
 
 Prerequisites: 
       1. Python is installed
-      2. Pyton Packages: numpy, stl, meep, matplotlib, trimesh
-        -pip install numpy numpy-stl meep matplotlib trimesh
-        -note that this would might be useful within a meep conda environment
+      2. Pyton Packages: numpy, stl, meep, matplotlib, trimesh, scipy
+        -pip install numpy numpy-stl meep matplotlib trimesh scipy
+        -note that this might be useful within a meep conda environment
 
 
 Script Overview:
@@ -17,7 +17,8 @@ Script Overview:
       -if you want to create a base for the objects to stand on for the stl file, you can add a True flag at the end: make_meep_stl_file(sim, dest_path, True). If you leave it out, it defaults to False.
 
   2.Another key function is the show_stl_plot(stl_file_output_path)
-        -This can be any stl file
+        -This will show a 3D rendering of the stl file
+        -This can be any stl file, not just the one you made 
 
 Running the Script:
   You can run this script on it's own to see how some of the functions work. 
